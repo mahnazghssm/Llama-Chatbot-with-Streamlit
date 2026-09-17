@@ -12,9 +12,10 @@ A simple chatbot built with Streamlit and connected to a locally running Llama m
 ## Project Structure
 
 ```text
-Llama_Chatbot_with_Streamlit/
+Llama-Chatbot-with-Streamlit/
 ├── README.md
 ├── requirements.txt
+├── .gitignore
 └── src/
     ├── app.py
     └── utils.py
@@ -74,7 +75,7 @@ http://localhost:8501
 
 The Streamlit app takes the user's message and sends it to the local Llama model through the Ollama API.
 
-`app.py` handles the chat interface and conversation history, while `utils.py` contains the function used to send requests to the Ollama API.
+`app.py` handles the chat interface and conversation history, while `utils.py` contains the function used to send requests to the Ollama API. If Ollama isn't running or the request fails, the error is shown in the chat instead of crashing the app.
 
 ## Requirements
 
@@ -86,6 +87,5 @@ The Streamlit app takes the user's message and sends it to the local Llama model
 
 ## Future Improvements
 
-- Add better error handling for API connection problems
 - Add streaming responses
 - Allow users to select different Llama models
