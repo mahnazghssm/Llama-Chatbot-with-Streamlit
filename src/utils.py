@@ -23,11 +23,14 @@ def call_llama(model: str, prompt: str, stream: bool = False) -> Union[Dict, str
 
     json_data = json.dumps(data)
 
-    response = requests.post(
-        url,
-        data=json_data,
-        headers={"content-type": "application/json"},
-    )
+    try:
+        response = requests.post(
+            url,
+            data=json_data,
+            headers={"content-type": "application/json"},
+        )
+    except requests.exceptions.ConnectionError:
+        return "Error: could not connect to Ollama. Is it running on localhost:11434?"
 
     if response.status_code == 200:
         return response.json()
