@@ -20,9 +20,13 @@ if prompt := st.chat_input():
     st.chat_message("user").write(prompt)
 
     with st.spinner("Generating response..."):
-        msg = call_llama("llama2", prompt)["response"]
+        result = call_llama("llama2", prompt)
 
-    st.session_state.messages.append(
-        {"role": "assistant", "content": msg}
-    )
-    st.chat_message("assistant").write(msg)
+    if isinstance(result, dict):
+        msg = result["response"]
+        st.session_state.messages.append(
+            {"role": "assistant", "content": msg}
+        )
+        st.chat_message("assistant").write(msg)
+    else:
+        st.chat_message("assistant").write(result)
