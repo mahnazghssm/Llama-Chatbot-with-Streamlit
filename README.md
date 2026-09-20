@@ -11,7 +11,7 @@ A simple chatbot built with Streamlit and connected to a locally running Llama m
 
 ## Project Structure
 
-```text
+```text id="kq5n8w"
 Llama-Chatbot-with-Streamlit/
 ├── README.md
 ├── requirements.txt
@@ -25,21 +25,21 @@ Llama-Chatbot-with-Streamlit/
 
 ### 1. Clone the repository
 
-```bash
+```bash id="4v9p1k"
 git clone https://github.com/mahnazghssm/Llama-Chatbot-with-Streamlit.git
 cd Llama-Chatbot-with-Streamlit
 ```
 
 ### 2. Create a virtual environment
 
-```bash
+```bash id="2q5x7c"
 python3 -m venv venv
 source venv/bin/activate
 ```
 
 ### 3. Install dependencies
 
-```bash
+```bash id="7g8m2d"
 pip install -r requirements.txt
 ```
 
@@ -49,25 +49,25 @@ Make sure Ollama is installed and running on your computer.
 
 The project uses the `llama2` model. If you don't already have it, pull the model with:
 
-```bash
+```bash id="f8q3vz"
 ollama pull llama2
 ```
 
 Make sure the Ollama API is running on:
 
-```text
+```text id="d3n6rt"
 http://localhost:11434
 ```
 
 ### 5. Run the application
 
-```bash
+```bash id="w4m7yx"
 streamlit run src/app.py
 ```
 
 The application will open in your browser at:
 
-```text
+```text id="c2k9pl"
 http://localhost:8501
 ```
 
@@ -89,3 +89,7 @@ The Streamlit app takes the user's message and sends it to the local Llama model
 
 - Add streaming responses
 - Allow users to select different Llama models
+
+## License
+
+This project is licensed under the MIT License.
